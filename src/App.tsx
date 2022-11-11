@@ -1,6 +1,7 @@
 import "./styles.css";
 import { Canvas, Node, NodeData, EdgeData, NodeProps } from "reaflow";
-import { List as CList, ListCustom } from "@rimbu/list";
+import { List as CList } from "@rimbu/list";
+import * as ListCustom from "@rimbu/list/custom";
 import type { List } from "@rimbu/list";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
@@ -13,7 +14,7 @@ export default function App() {
 
   const [firstValue, setFirstValue] = useState(0);
   const [lastValue, setLastValue] = useState(1);
-  const [list, setList] = useState(CustomList.of(0).repeat(900).asNormal());
+  const [list, setList] = useState(CustomList.of(0).repeat(300).asNormal());
 
   useEffect(() => {
     setList((v) => CustomList.from(v));
